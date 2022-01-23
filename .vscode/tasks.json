@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "perla:run",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "perla",
+                "serve"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
