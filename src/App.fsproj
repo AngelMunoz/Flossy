@@ -1,23 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Extensions.fs" />
     <Compile Include="Types.fs" />
-    <Compile Include="Components/Counter.fs" />
-    <Compile Include="Components/Navbar.fs" />
-    <Compile Include="Notes.fs" />
-    <Compile Include="Home.fs" />
+    <Compile Include="Stores.fs" />
+    <Compile Include="Styles.fs" />
+    <Compile Include="Components/FloNotificationHub.fs" />
+    <Compile Include="Components/FloWallpaper.fs" />
+    <Compile Include="Components/FloTaskbar.fs" />
+    <Compile Include="Components/FloDesktop.fs" />
     <Compile Include="App.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fable.Lit" Version="1.3.1" />
-    <PackageReference Include="Fable.Lit.Elmish" Version="1.3.0" />
+    <PackageReference Include="Fable.Core" Version="3.6.1" />
+    <PackageReference Include="Fable.Lit" Version="1.4.1" />
+    <PackageReference Include="Fable.Store" Version="1.0.0-beta-005" />
+    <PackageReference Include="Fable.Promise" Version="3.1.3" />
+    <!-- <PackageReference Include="FsToolkit.ErrorHandling" Version="2.13.0" /> -->
   </ItemGroup>
 
 </Project>

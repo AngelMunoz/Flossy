@@ -1,9 +1,11 @@
 ﻿module Main
 
+Fable.Core.JsInterop.importSideEffects "./main.css"
+Fable.Core.JsInterop.importSideEffects "@shoelace-style/shoelace"
 open Components
-Fable.Core.JsInterop.importSideEffects "./styles.css"
 
-// register your custom elements here
-Counter.register ()
-Navbar.register ()
-App.start ()
+
+FloDesktop.register ()
+FloNotificationHub.register ()
+FloTaskbar.register ()
+App.register ()

@@ -1,19 +1,43 @@
-[<AutoOpen>]
-module Extensions
+module Types
 
-open Browser.Types
 open Fable.Core
+open Fable.Core.JS
+open System
 
-[<Emit("new Event($0, $1)")>]
-let createEvent name options : Event = jsNative
+[<StringEnum>]
+type NotificationPosition =
+    | TopLeft
+    | TopRight
+    | BottomLeft
+    | BottomRight
 
-[<Emit("new CustomEvent($0, $1)")>]
-let createCustomEvent name options : CustomEvent<_> = jsNative
+[<StringEnum; RequireQualifiedAccess>]
+type DesktopLayout =
+    | Default
+    | MacOsish
+    | Winish
 
+type Notification =
+    {| id: string
+       title: string
+       content: string option
+       duration: float option
+       position: NotificationPosition option |}
 
-module Types =
+type AppWindowState =
+    | Minimized
+    | Maximized
+    | Active
+    | Inactive
 
-  [<RequireQualifiedAccess>]
-  type Page =
-    | Home
-    | Notes
+type App =
+    { appWindowState: AppWindowState
+      id: Guid
+      title: string
+      icon: string option
+      pinned: bool
+      canOpenMultiple: bool }
+
+type INotifier =
+    abstract Notify : Notification -> unit
+    abstract Cancel : string -> unit

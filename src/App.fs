@@ -2,33 +2,23 @@
 module App
 
 open Lit
-open Browser.Types
 open Types
-open Components
-open Browser.Dom
-open Pages.Home
-open Pages.Notes
 
-[<HookComponent>]
+let private init (config: LitConfig<_>) = ()
+
+[<LitElement("root-app")>]
 let private app () =
-  let state, setState = Hook.useState Page.Home
+    LitElement.init init |> ignore
 
-  let onBackRequested _ = printfn "Back requested"
+    let layout, setLayout = Hook.useState DesktopLayout.Default
 
-  let goToPage (ev: CustomEvent<Page>) =
-    let page = defaultArg ev.detail Page.Home
-    setState page
+    html
+        $"""
+        <flo-desktop .layout={layout}>
+            <flo-wallpaper></flo-wallpaper>
+            <flo-taskbar slot="taskbar" .layout={layout}></flo-taskbar>
+            <flo-notification-hub slot="notifications"></flo-notification-hub>
+        </flo-desktop>
+        """
 
-  let getPage page =
-    match page with
-    | Page.Home -> Home()
-    | Page.Notes -> Notes()
-
-  html
-    $"""
-     <flit-navbar @go-back={onBackRequested} @go-to-page={goToPage}></flit-navbar>
-    {getPage state}
-  """
-
-let start () =
-  Lit.render (document.querySelector "#lit-app") (app ())
+let register () = ()
