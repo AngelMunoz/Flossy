@@ -6,6 +6,7 @@
     "project": "./src/App.fsproj"
   },
   "packages": {
+    "@shoelace-style/shoelace": "https://cdn.skypack.dev/pin/@shoelace-style/shoelace@v2.0.0-beta.64-NmuUW18p3yWu4i4Qr0Ob/mode=imports/optimized/@shoelace-style/shoelace.js",
     "lit": "https://cdn.skypack.dev/pin/lit@v2.0.2-78IU6uYV3lBYFK6qpY9H/mode=imports/optimized/lit.js",
     "lit-html": "https://cdn.skypack.dev/pin/lit-html@v2.0.2-JE82jsjodaQGh1EnJO4l/mode=imports/optimized/lit-html.js"
   }

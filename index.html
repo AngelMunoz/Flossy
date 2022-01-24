@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Perla + Fable.Lit</title>
+    <title>Flossy</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="/src/fable.ico" />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:light)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.64/dist/themes/light.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme:dark)"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.64/dist/themes/dark.css"
+      onload="document.documentElement.classList.add('sl-theme-dark');"
+    />
     <script
       async
-      src="https://ga.jspm.io/npm:es-module-shims@1.0.0/dist/es-module-shims.js"
+      src="https://ga.jspm.io/npm:es-module-shims@1.4.1/dist/es-module-shims.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <div id="lit-app"></div>
+    <root-app></root-app>
     <script data-entry-point src="./src/Main.fs.js" type="module"></script>
   </body>
 </html>
