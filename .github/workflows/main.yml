@@ -19,9 +19,11 @@ jobs:
         run: dotnet tool restore
       - name: Build
         run: dotnet perla build
-
-      - name: Upload App Build Artifact
+  artifacts:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/upload-artifact@v2
+      - name: Upload App Build Artifact
         with:
           name: App
           path: /home/runner/work/dist/
