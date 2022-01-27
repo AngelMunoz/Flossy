@@ -10,6 +10,7 @@
     <Compile Include="Stores.fs" />
     <Compile Include="Styles.fs" />
     <Compile Include="Components/FloNotificationHub.fs" />
+    <Compile Include="Components/FloStart.fs" />
     <Compile Include="Components/FloWallpaper.fs" />
     <Compile Include="Components/FloTaskbar.fs" />
     <Compile Include="Components/FloDesktop.fs" />

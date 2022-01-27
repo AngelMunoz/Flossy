@@ -38,6 +38,11 @@ type App =
       pinned: bool
       canOpenMultiple: bool }
 
+type RootState =
+    { isStartOpen: bool
+      apps: App []
+      layout: DesktopLayout }
+
 type INotifier =
-    abstract Notify : Notification -> unit
-    abstract Cancel : string -> unit
+    abstract Notify: Notification -> unit
+    abstract Cancel: string -> unit

@@ -58,10 +58,26 @@ let floTaskbar =
         nav {{
             margin: 0 1em;
             display: flex;
-            justify-content: center;
+            place-content: center;
+        }}
+
+        ul, menu {{
+            padding: 0;
+            margin: 0;
+        }}
+
+        menu {{
+            flex: 2 0;
+            display: flex;
+            justify-content: flex-end;
         }}
         ul {{
             display: flex;
             justify-content: space-evenly;
+            flex: 1 0;
+        }}
+        section {{
+            margin-left: auto;
+            padding: 0 1em;
         }}
     """
